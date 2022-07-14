@@ -37,6 +37,12 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
             </button>
           </div> */}
         </div>
+        <button type='button' className='button--disable profil__friends'>
+          <i className='fa-solid fa-user-group'></i>
+        </button>
+        <button type='button' className='button--disable profil__burger'>
+          <i className='fa-solid fa-bars'></i>
+        </button>
       </div>
     </div>
   );

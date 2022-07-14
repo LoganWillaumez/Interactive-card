@@ -20,7 +20,7 @@
     gap: 1rem;
     &__firstName {
       margin: 0;
-      font-size: calc(1vw + 1vh + 2vmin);
+      font-size: calc(1vw + 1vh + 1vmin);
     }
     &__location {
       display: flex;
@@ -29,7 +29,7 @@
       gap: 1rem;
     }
     &__city {
-      font-size: calc(1vw + 1vh + 0.8vmin);
+      font-size: calc(1vw + 1vh + 0vmin);
       margin: 0;
       @media only screen and (min-width: 1000px) {
         max-width: fit-content;
@@ -99,6 +99,43 @@
     }
     @media only screen and (min-width: 1000px) {
       gap: 2rem;
+      // padding-bottom: 3rem;
+      // border-bottom: 2px solid white;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 80%;
+        bottom: -3rem;
+        height: 2px;
+        background-color: white;
+      }
+    }
+    &__friends {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: calc(1vw + 1vh + 1vmin);
+      @media only screen and (min-width: 800px) {
+        top: 30px;
+        right: 30px;
+      }
+      @media only screen and (min-width: 1000px) {
+        display: none;
+      }
+    }
+    &__burger {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: calc(1vw + 1vh + 1vmin);
+      @media only screen and (min-width: 800px) {
+        top: 30px;
+        right: 30px;
+      }
+      @media only screen and (min-width: 1000px) {
+        display: none;
+      }
     }
   }
   @media only screen and (min-width: 800px) {
