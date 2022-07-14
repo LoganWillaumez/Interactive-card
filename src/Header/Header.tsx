@@ -1,7 +1,13 @@
 import './Header.scss';
 import { randomUser } from '../../interfaces/fetchRandomUser';
+import { MenuFriends } from '../MenuFriends/MenuFriends';
+import { useState } from 'react';
 
 function Header({ dataUser }: { dataUser: randomUser[] }) {
+  const [friendsOpen, setFriendsOpen] = useState<boolean>(false);
+  const toggleFriends = () => {
+    setFriendsOpen(!friendsOpen);
+  };
   return (
     <div className='sidebar'>
       <div className='profil'>
@@ -37,9 +43,20 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
             </button>
           </div> */}
         </div>
-        <button type='button' className='button--disable profil__friends'>
-          <i className='fa-solid fa-user-group'></i>
-        </button>
+        <div className='profil__friends'>
+          <button
+            type='button'
+            className='button--disable'
+            onClick={() => toggleFriends()}
+          >
+            <i className='fa-solid fa-user-group'></i>
+          </button>
+          <MenuFriends
+            dataUser={dataUser}
+            friendsOpen={friendsOpen}
+            toggleFriends={toggleFriends}
+          />
+        </div>
         <button type='button' className='button--disable profil__burger'>
           <i className='fa-solid fa-bars'></i>
         </button>
