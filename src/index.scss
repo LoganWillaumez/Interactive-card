@@ -5,3 +5,7 @@ body {
   height: 100%;
   width: 100%;
 }
+.button--disable {
+  all: unset;
+  cursor: pointer;
+}

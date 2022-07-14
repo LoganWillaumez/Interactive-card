@@ -1,6 +1,7 @@
 export interface randomUser {
   name: { title: string; first: string; last: string };
-  location: { country: string };
+  dob: { age: number };
+  location: { country: string; city: string };
   login: { username: string; uuid: string };
   phone: number;
   email: string;

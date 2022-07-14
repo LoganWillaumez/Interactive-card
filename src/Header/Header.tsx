@@ -1,14 +1,20 @@
 import './Header.scss';
 import { randomUser } from '../../interfaces/fetchRandomUser';
+import { MenuFriends } from '../MenuFriends/MenuFriends';
+import { useState } from 'react';
 
 function Header({ dataUser }: { dataUser: randomUser[] }) {
+  const [friendsOpen, setFriendsOpen] = useState<boolean>(false);
+  const toggleFriends = () => {
+    setFriendsOpen(!friendsOpen);
+  };
   return (
     <div className='sidebar'>
       <div className='profil'>
-        <h2 className='profil__firstName'>{dataUser[0]?.name.first}</h2>
+        <h2 className='profil__firstName'>{`${dataUser[0]?.name.first}, ${dataUser[0]?.dob.age}`}</h2>
         <div className='profil__location'>
           <i className='profil__point fa-solid fa-location-pin' />
-          <p className='profil__city'>{dataUser[0]?.location.country}</p>
+          <p className='profil__city'>{`${dataUser[0]?.location.city}, ${dataUser[0]?.location.country}`}</p>
         </div>
         <div className='profil__picture'>
           <img
@@ -16,7 +22,7 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
             src={dataUser[0]?.picture.large}
             alt={`picture of ${dataUser[0]?.name.first}`}
           />
-          <div className='profil__social'>
+          {/* <div className='profil__social'>
             <a
               className='profil__icons profil__icons--email'
               href={`mailto:${dataUser[0]?.email}`}
@@ -29,7 +35,49 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
             >
               <i className='fa-solid fa-phone' />
             </a>
-          </div>
+            <button
+              type='button'
+              className='button--disable profil__icons profil__friends'
+            >
+              <i className='fa-solid fa-user-group'></i>
+            </button>
+          </div> */}
+        </div>
+        <div className='profil__friends'>
+          <button
+            type='button'
+            className='button--disable'
+            onClick={() => toggleFriends()}
+          >
+            <i className='fa-solid fa-user-group'></i>
+          </button>
+          <MenuFriends
+            dataUser={dataUser}
+            friendsOpen={friendsOpen}
+            toggleFriends={toggleFriends}
+          />
+        </div>
+        <button type='button' className='button--disable profil__burger'>
+          <i className='fa-solid fa-bars'></i>
+        </button>
+      </div>
+      <div className='friends'>
+        <h4 className='friends__title'>Friends :</h4>
+        <div className='friends__data'>
+          {dataUser?.map((data, i) => {
+            return (
+              i !== 0 && (
+                <div className='friends__global'>
+                  <img
+                    className='friends__img'
+                    src={data.picture.large}
+                    alt=''
+                  />
+                  <p className='friends__name'>{data.name.first}</p>
+                </div>
+              )
+            );
+          })}
         </div>
       </div>
     </div>

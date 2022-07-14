@@ -1,6 +1,5 @@
 .sidebar {
   width: 100%;
-  background-color: red;
   position: relative;
   padding-top: 2rem;
   background-image: linear-gradient(
@@ -17,17 +16,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
     &__firstName {
       margin: 0;
-      font-size: calc(1vw + 1vh + 2vmin);
+      font-size: calc(1vw + 1vh + 1vmin);
     }
     &__location {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 1rem;
     }
     &__city {
-      font-size: calc(1vw + 1vh + 0.8vmin);
+      font-size: calc(1vw + 1vh + 0vmin);
+      margin: 0;
+      @media only screen and (min-width: 1000px) {
+        max-width: fit-content;
+      }
     }
     &__point {
       font-size: calc(1vw + 1vh + 0.8vmin);
@@ -38,18 +43,19 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 80%;
       .profil__img {
         border-radius: 50%;
         width: 110px;
-        border: 8px solid white;
+        border: 2px solid white;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         @media only screen and (min-width: 800px) {
           width: 180px;
         }
         @media only screen and (min-width: 1000px) {
           order: -1;
-          width: 70%;
-          border: 4px solid white;
+          width: 90%;
+          border: 2px solid white;
         }
       }
       .profil__icons {
@@ -79,8 +85,53 @@
     }
     &__social {
       display: flex;
-      gap: 4rem;
+      gap: 1.5rem;
+      @media only screen and (min-width: 800px) {
+        gap: 3rem;
+      }
       @media only screen and (min-width: 1000px) {
+        gap: 1rem;
+      }
+      @media only screen and (min-width: 1200px) {
+        gap: 2rem;
+      }
+    }
+    @media only screen and (min-width: 1000px) {
+      gap: 2rem;
+      // padding-bottom: 3rem;
+      // border-bottom: 2px solid white;
+      position: relative;
+      &::after {
+        content: '';
+        width: 80%;
+        height: 2px;
+        background-color: white;
+      }
+    }
+    &__friends {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: calc(1vw + 1vh + 1vmin);
+      @media only screen and (min-width: 800px) {
+        top: 30px;
+        right: 30px;
+      }
+      @media only screen and (min-width: 1000px) {
+        display: none;
+      }
+    }
+    &__burger {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: calc(1vw + 1vh + 1vmin);
+      @media only screen and (min-width: 800px) {
+        top: 30px;
+        right: 30px;
+      }
+      @media only screen and (min-width: 1000px) {
+        display: none;
       }
     }
   }
@@ -91,5 +142,49 @@
   @media only screen and (min-width: 1000px) {
     height: 100%;
     width: 20%;
+  }
+  &::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #3f78d5;
+    position: absolute;
+    bottom: -5px;
+    @media only screen and (min-width: 1000px) {
+      bottom: auto;
+      top: 0;
+      right: -5px;
+      width: 2px;
+      height: 100%;
+    }
+  }
+  .friends {
+    display: none;
+    @media only screen and (min-width: 1000px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 4rem;
+    }
+    &__data {
+      display: flex;
+      gap: 1rem;
+    }
+    &__img {
+      width: 60px;
+      border-radius: 50%;
+    }
+    &__global {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &::after {
+      margin-top: 2rem;
+      content: '';
+      width: 80%;
+      height: 2px;
+      background-color: white;
+    }
   }
 }
