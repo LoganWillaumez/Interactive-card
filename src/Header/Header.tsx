@@ -2,6 +2,7 @@ import './Header.scss';
 import { randomUser } from '../../interfaces/fetchRandomUser';
 import { MenuFriends } from '../MenuFriends/MenuFriends';
 import { useState } from 'react';
+import { Routes, Route, Link, NavLink } from 'react-router-dom';
 
 function Header({ dataUser }: { dataUser: randomUser[] }) {
   const [friendsOpen, setFriendsOpen] = useState<boolean>(false);
@@ -79,6 +80,24 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
             );
           })}
         </div>
+      </div>
+      <div className='links'>
+        <NavLink
+          to='/'
+          className={({ isActive }) =>
+            isActive ? 'nav-link nav-link--selected' : 'nav-link'
+          }
+        >
+          Map
+        </NavLink>
+        <NavLink
+          to='/map'
+          className={({ isActive }) =>
+            isActive ? 'nav-link nav-link--selected' : 'nav-link'
+          }
+        >
+          Contact
+        </NavLink>
       </div>
     </div>
   );

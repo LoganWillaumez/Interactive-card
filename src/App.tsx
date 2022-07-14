@@ -4,6 +4,9 @@ import './App.scss';
 import Header from './Header/Header';
 import { fetchRandomUser, randomUser } from '../interfaces/fetchRandomUser';
 import ClipLoader from 'react-spinners/ClipLoader';
+import { Routes, Route, Link } from 'react-router-dom';
+import { Map } from './Map/Map';
+import { Contact } from './Contact/Contact';
 
 const baseURL = 'https://randomuser.me/api/?results=3';
 
@@ -26,7 +29,6 @@ function App() {
       setLoading(false);
     });
   }, []);
-
   return (
     <div className='App'>
       {loading ? (
@@ -37,7 +39,13 @@ function App() {
           cssOverride={override}
         />
       ) : (
-        <Header dataUser={dataUser} />
+        <div className='container'>
+          <Header dataUser={dataUser} />
+          <Routes>
+            <Route path='/' element={<Map />} />
+            <Route path='/map' element={<Contact />} />
+          </Routes>
+        </div>
       )}
     </div>
   );
