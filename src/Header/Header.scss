@@ -1,0 +1,57 @@
+.sidebar {
+  width: 100%;
+  background-color: red;
+  position: relative;
+  padding-top: 2rem;
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(45, 116, 213, 1) 11.2%,
+    rgba(121, 137, 212, 1) 91.2%
+  );
+  padding-bottom: 4rem;
+  color: white;
+  &__title {
+    margin: 0;
+  }
+  .profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__firstName {
+      margin: 0;
+    }
+    &__location {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    &__picture {
+      position: absolute;
+      bottom: -65px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 80%;
+      .profil__img {
+        border-radius: 50%;
+        width: 110px;
+        border: 8px solid white;
+      }
+      .profil__icons {
+        color: white;
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+        background-color: #ff3070;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transition: scale 200ms ease-in-out;
+        &:hover {
+          scale: 1.5;
+        }
+      }
+    }
+  }
+}
