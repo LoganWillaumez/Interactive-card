@@ -61,6 +61,25 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
           <i className='fa-solid fa-bars'></i>
         </button>
       </div>
+      <div className='friends'>
+        <h4 className='friends__title'>Friends :</h4>
+        <div className='friends__data'>
+          {dataUser?.map((data, i) => {
+            return (
+              i !== 0 && (
+                <div className='friends__global'>
+                  <img
+                    className='friends__img'
+                    src={data.picture.large}
+                    alt=''
+                  />
+                  <p className='friends__name'>{data.name.first}</p>
+                </div>
+              )
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
