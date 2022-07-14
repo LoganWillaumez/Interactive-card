@@ -1,34 +1,29 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
+import { useEffect, useState } from 'react';
+import axios, { AxiosResponse } from 'axios';
 import './App.scss';
+import Header from './Header/Header';
+import { fetchRandomUser, randomUser } from '../interfaces/fetchRandomUser';
+
+const baseURL = 'https://randomuser.me/api/?results=3';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div className='App'>
-      <div>
-        <a href='https://vitejs.dev' target='_blank'>
-          <img src='/vite.svg' className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://reactjs.org' target='_blank'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  );
+  const [dataUser, setDataUser] = useState<randomUser[]>([]);
+  const [isClick, setIsClick] = useState<boolean>(false);
+  useEffect(() => {
+    axios.get<fetchRandomUser[]>(baseURL).then((response: AxiosResponse) => {
+      setDataUser(response.data.results);
+    });
+  }, []);
+  return <div className='App'>{<Header dataUser={dataUser} />}</div>;
 }
 
 export default App;
+
+/*
+name {title,first,last}
+location:{country}
+login:{username,uuid}
+phone : number
+picture : {large,medium,thumbnail}
+registered : { date:string,age:number(years)}
+*/
