@@ -5,10 +5,10 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
   return (
     <div className='sidebar'>
       <div className='profil'>
-        <h2 className='profil__firstName'>{dataUser[0]?.name.first}</h2>
+        <h2 className='profil__firstName'>{`${dataUser[0]?.name.first}, ${dataUser[0]?.dob.age}`}</h2>
         <div className='profil__location'>
           <i className='profil__point fa-solid fa-location-pin' />
-          <p className='profil__city'>{dataUser[0]?.location.country}</p>
+          <p className='profil__city'>{`${dataUser[0]?.location.city}, ${dataUser[0]?.location.country}`}</p>
         </div>
         <div className='profil__picture'>
           <img
@@ -16,7 +16,7 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
             src={dataUser[0]?.picture.large}
             alt={`picture of ${dataUser[0]?.name.first}`}
           />
-          <div className='profil__social'>
+          {/* <div className='profil__social'>
             <a
               className='profil__icons profil__icons--email'
               href={`mailto:${dataUser[0]?.email}`}
@@ -29,7 +29,13 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
             >
               <i className='fa-solid fa-phone' />
             </a>
-          </div>
+            <button
+              type='button'
+              className='button--disable profil__icons profil__friends'
+            >
+              <i className='fa-solid fa-user-group'></i>
+            </button>
+          </div> */}
         </div>
       </div>
     </div>
