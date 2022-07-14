@@ -12,6 +12,7 @@ function App() {
   useEffect(() => {
     axios.get<fetchRandomUser[]>(baseURL).then((response: AxiosResponse) => {
       setDataUser(response.data.results);
+      console.log(`🚀 ~ response.data.results`, response.data.results);
     });
   }, []);
   return <div className='App'>{<Header dataUser={dataUser} />}</div>;
