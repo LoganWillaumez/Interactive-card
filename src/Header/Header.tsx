@@ -7,7 +7,7 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
       <div className='profil'>
         <h2 className='profil__firstName'>{dataUser[0]?.name.first}</h2>
         <div className='profil__location'>
-          <i className='fa-solid fa-location-pin' />
+          <i className='profil__point fa-solid fa-location-pin' />
           <p className='profil__city'>{dataUser[0]?.location.country}</p>
         </div>
         <div className='profil__picture'>

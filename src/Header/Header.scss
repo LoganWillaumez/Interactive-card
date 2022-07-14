@@ -19,11 +19,18 @@
     align-items: center;
     &__firstName {
       margin: 0;
+      font-size: calc(1vw + 1vh + 2vmin);
     }
     &__location {
       display: flex;
       align-items: center;
       gap: 1rem;
+    }
+    &__city {
+      font-size: calc(1vw + 1vh + 0.8vmin);
+    }
+    &__point {
+      font-size: calc(1vw + 1vh + 0.8vmin);
     }
     &__picture {
       position: absolute;
@@ -39,9 +46,9 @@
       }
       .profil__icons {
         color: white;
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
+        font-size: calc(1vw + 1vh + 1vmin);
+        padding: 0.6rem;
+        text-decoration: none;
         background-color: #ff3070;
         display: flex;
         justify-content: center;
