@@ -187,4 +187,24 @@
       background-color: white;
     }
   }
+  .links {
+    display: none;
+    @media only screen and (min-width: 1000px) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+      gap: 2rem;
+      text-decoration: none;
+    }
+    .nav-link {
+      padding: 2rem;
+      &--selected {
+        background-color: #01000033;
+        color: white;
+        border-left: 4px solid #ff9e3c;
+      }
+    }
+  }
 }
