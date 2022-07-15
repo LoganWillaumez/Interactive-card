@@ -15,7 +15,11 @@ export const MenuFriends = ({
       {dataUser?.map((data, i) => {
         return i !== 0 ? (
           <div key={data.login.uuid + i} className='menuFriends__picture'>
-            <img className='menuFriends__img' src={data.picture.large} alt='' />
+            <img
+              className='menuFriends__img'
+              src={data.picture.large}
+              alt={`picture of ${data?.name.first}`}
+            />
             <p className='menuFriends__name'>{data.name.first}</p>
           </div>
         ) : null;
