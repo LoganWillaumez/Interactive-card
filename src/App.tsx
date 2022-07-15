@@ -1,12 +1,12 @@
 import { useEffect, useState, CSSProperties } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import './App.scss';
-import Header from './Header/Header';
+import Header from './Components/Header/Header';
 import { fetchRandomUser, randomUser } from '../interfaces/fetchRandomUser';
 import ClipLoader from 'react-spinners/ClipLoader';
-import { Routes, Route, Link } from 'react-router-dom';
-import { Map } from './Map/Map';
-import { Contact } from './Contact/Contact';
+import { Routes, Route } from 'react-router-dom';
+import { Map } from './Components/Map/Map';
+import { Contact } from './Components/Contact/Contact';
 
 const baseURL = 'https://randomuser.me/api/?results=3';
 
@@ -19,7 +19,6 @@ const override: CSSProperties = {
 
 function App() {
   const [dataUser, setDataUser] = useState<randomUser[]>([]);
-  const [isClick, setIsClick] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
     setLoading(true);
@@ -29,7 +28,6 @@ function App() {
       setLoading(false);
     });
   }, []);
-  console.log(`🚀 ~ dataUser`, dataUser);
   return (
     <div className='App'>
       {loading ? (
@@ -53,12 +51,3 @@ function App() {
 }
 
 export default App;
-
-/*
-name {title,first,last}
-location:{country}
-login:{username,uuid}
-phone : number
-picture : {large,medium,thumbnail}
-registered : { date:string,age:number(years)}
-*/

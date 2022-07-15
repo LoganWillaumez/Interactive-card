@@ -1,13 +1,18 @@
 import './Header.scss';
-import { randomUser } from '../../interfaces/fetchRandomUser';
+import { randomUser } from '../../../interfaces/fetchRandomUser';
 import { MenuFriends } from '../MenuFriends/MenuFriends';
 import { useState } from 'react';
-import { Routes, Route, Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 
 function Header({ dataUser }: { dataUser: randomUser[] }) {
   const [friendsOpen, setFriendsOpen] = useState<boolean>(false);
   const toggleFriends = () => {
     setFriendsOpen(!friendsOpen);
+  };
+  const [burgerOpen, setBurgerOpen] = useState<boolean>(false);
+  const toggleBurger = () => {
+    setBurgerOpen(!burgerOpen);
   };
   return (
     <div className='sidebar'>
@@ -23,26 +28,6 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
             src={dataUser[0]?.picture.large}
             alt={`picture of ${dataUser[0]?.name.first}`}
           />
-          {/* <div className='profil__social'>
-            <a
-              className='profil__icons profil__icons--email'
-              href={`mailto:${dataUser[0]?.email}`}
-            >
-              <i className='fa-solid fa-envelope' />
-            </a>
-            <a
-              className='profil__icons profil__icons--phone'
-              href={`tel:${dataUser[0]?.phone}`}
-            >
-              <i className='fa-solid fa-phone' />
-            </a>
-            <button
-              type='button'
-              className='button--disable profil__icons profil__friends'
-            >
-              <i className='fa-solid fa-user-group'></i>
-            </button>
-          </div> */}
         </div>
         <div className='profil__friends'>
           <button
@@ -58,9 +43,16 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
             toggleFriends={toggleFriends}
           />
         </div>
-        <button type='button' className='button--disable profil__burger'>
-          <i className='fa-solid fa-bars'></i>
-        </button>
+        <div className='profil__burger'>
+          <button
+            type='button'
+            className='button--disable button__burger'
+            onClick={() => toggleBurger()}
+          >
+            <i className='fa-solid fa-bars'></i>
+          </button>
+          <BurgerMenu burgerOpen={burgerOpen} toggleBurger={toggleBurger} />
+        </div>
       </div>
       <div className='friends'>
         <h4 className='friends__title'>Friends :</h4>
@@ -68,7 +60,10 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
           {dataUser?.map((data, i) => {
             return (
               i !== 0 && (
-                <div className='friends__global'>
+                <div
+                  key={dataUser[0]?.login.uuid + i}
+                  className='friends__global'
+                >
                   <img
                     className='friends__img'
                     src={data.picture.large}

@@ -125,6 +125,7 @@
     &__burger {
       position: absolute;
       top: 20px;
+      width: fit-content;
       left: 20px;
       font-size: calc(1vw + 1vh + 1vmin);
       @media only screen and (min-width: 800px) {
@@ -174,6 +175,12 @@
     &__img {
       width: 60px;
       border-radius: 50%;
+      transition: transform 200ms ease-in-out;
+      transform: scale(1);
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+      }
     }
     &__global {
       display: flex;
@@ -206,6 +213,18 @@
         color: white;
         border-left: 4px solid #ff9e3c;
       }
+      transition: all 200ms ease-in-out;
+      transform: scale(1);
+      &:hover {
+        &:not(.nav-link--selected) {
+          transform: scale(1.2);
+          color: #ff9e3c;
+        }
+      }
     }
+  }
+  @media only screen and (min-width: 1000px) {
+    overflow-y: auto;
+    height: 90vh;
   }
 }
