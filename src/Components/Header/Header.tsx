@@ -17,11 +17,15 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
   return (
     <div className='sidebar'>
       <div className='sidebar__scroll'>
+<<<<<<< HEAD
         <section className='sidebar__title-container'>
           <img className='sidebar__logo' src='./logo.png' alt='logo of site' />
           <h1 className='sidebar__title'>Inter'Map</h1>
         </section>
         <section className='profil'>
+=======
+        <div className='profil'>
+>>>>>>> eac85e9 (RELEASE 0.1.1 - FIX BUG)
           <h2 className='profil__firstName'>{`${dataUser[0]?.name.first}, ${dataUser[0]?.dob.age}`}</h2>
           <div className='profil__location'>
             <i className='profil__point fa-solid fa-location-pin' />
@@ -58,6 +62,7 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
             </button>
             <BurgerMenu burgerOpen={burgerOpen} toggleBurger={toggleBurger} />
           </div>
+<<<<<<< HEAD
         </section>
         <div className='friends'>
           <h4 className='friends__title'>Friends :</h4>
@@ -81,6 +86,31 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
             })}
           </div>
         </div>
+=======
+        </div>
+        <div className='friends'>
+          <h4 className='friends__title'>Friends :</h4>
+          <div className='friends__data'>
+            {dataUser?.map((data, i) => {
+              return (
+                i !== 0 && (
+                  <div
+                    key={dataUser[0]?.login.uuid + i}
+                    className='friends__global'
+                  >
+                    <img
+                      className='friends__img'
+                      src={data.picture.large}
+                      alt=''
+                    />
+                    <p className='friends__name'>{data.name.first}</p>
+                  </div>
+                )
+              );
+            })}
+          </div>
+        </div>
+>>>>>>> eac85e9 (RELEASE 0.1.1 - FIX BUG)
         <div className='links'>
           <NavLink
             to='/'

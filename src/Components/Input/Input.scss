@@ -3,14 +3,14 @@
   border-bottom: 1px solid black;
   width: 100%;
   cursor: pointer;
-  height: 2rem;
+  height: 1.5rem;
   &::placeholder {
     transition: all 250ms ease-in-out;
     transform-origin: bottom left;
     opacity: 0.8;
   }
   &:focus::placeholder {
-    transform: translateY(-15px);
+    transform: translateY(-5px);
     color: #ff9e3c;
     font-size: 0.8rem;
     border: 0px;

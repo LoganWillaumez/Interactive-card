@@ -30,9 +30,9 @@
     gap: 1rem;
     &__firstName {
       margin: 0;
-      font-size: calc(1vw + 1vh + 1vmin);
+      font-size: calc(1vw + 1vh + 0.3vmin);
       @media only screen and (min-width: 1200px) {
-        font-size: 2.4rem;
+        font-size: 1.5rem;
       }
     }
     &__location {
@@ -226,6 +226,7 @@
     }
     .nav-link {
       padding: 2rem;
+      cursor: pointer;
       &--selected {
         background-color: #01000033;
         color: white;
