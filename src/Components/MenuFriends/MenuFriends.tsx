@@ -14,7 +14,7 @@ export const MenuFriends = ({
       <p className='menuFriends__title'>Friends</p>
       {dataUser?.map((data, i) => {
         return i !== 0 ? (
-          <div className='menuFriends__picture'>
+          <div key={data.login.uuid + i} className='menuFriends__picture'>
             <img className='menuFriends__img' src={data.picture.large} alt='' />
             <p className='menuFriends__name'>{data.name.first}</p>
           </div>

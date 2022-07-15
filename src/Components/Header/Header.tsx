@@ -60,7 +60,10 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
           {dataUser?.map((data, i) => {
             return (
               i !== 0 && (
-                <div className='friends__global'>
+                <div
+                  key={dataUser[0]?.login.uuid + i}
+                  className='friends__global'
+                >
                   <img
                     className='friends__img'
                     src={data.picture.large}
