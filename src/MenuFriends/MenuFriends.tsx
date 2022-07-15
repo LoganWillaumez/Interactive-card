@@ -22,10 +22,10 @@ export const MenuFriends = ({
       })}
       <button
         type='button'
-        className='button--disable menuFriends__close'
+        className='menuFriends__close'
         onClick={() => toggleFriends()}
       >
-        <i className='fa-solid fa-x '></i>
+        <i className='fa-solid fa-x'></i>
       </button>
     </div>
   );
