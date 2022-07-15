@@ -17,6 +17,10 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
   return (
     <div className='sidebar'>
       <div className='sidebar__scroll'>
+        <section className='sidebar__title-container'>
+          <img className='sidebar__logo' src='./logo.png' alt='logo of site' />
+          <h1 className='sidebar__title'>Inter'Map</h1>
+        </section>
         <section className='profil'>
           <h2 className='profil__firstName'>{`${dataUser[0]?.name.first}, ${dataUser[0]?.dob.age}`}</h2>
           <div className='profil__location'>

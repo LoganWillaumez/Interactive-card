@@ -18,8 +18,8 @@ export const Contact = () => {
     setTimeout(() => setModale(false), 3000);
   };
   return (
-    <div className='contact'>
-      <h4 className='contact__title'>Please, contact me!</h4>
+    <section className='contact'>
+      <h4 className='contact__title'>Contact me!</h4>
       <form
         className='contact__form'
         action=''
@@ -77,6 +77,6 @@ export const Contact = () => {
       <div className={`modale ${modale ? 'modale--see' : ''}`}>
         Message send !
       </div>
-    </div>
+    </section>
   );
 };
