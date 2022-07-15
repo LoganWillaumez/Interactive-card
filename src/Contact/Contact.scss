@@ -1,0 +1,45 @@
+.contact {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 40%;
+    align-items: center;
+  }
+  @media only screen and (min-width: 1000px) {
+    width: 80%;
+  }
+  .button-contact {
+    background-image: linear-gradient(
+      109.6deg,
+      rgba(45, 116, 213, 1) 11.2%,
+      rgba(121, 137, 212, 1) 91.2%
+    );
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    color: white;
+  }
+  .modale {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: #49b37e;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+    &--see {
+      opacity: 1;
+    }
+  }
+  &__title {
+    font-size: calc(1vw + 1vh + 2vmin);
+  }
+}
