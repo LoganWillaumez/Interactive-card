@@ -8,16 +8,19 @@
     rgba(45, 116, 213, 1) 11.2%,
     rgba(121, 137, 212, 1) 91.2%
   );
+
   padding-bottom: 4rem;
   color: white;
   &__title {
     margin: 0;
+    display: none;
     text-align: center;
     border-bottom: 2px solid white;
     font-size: calc(1vw + 1vh + 4vmin);
     margin-bottom: 1rem;
     @media only screen and (min-width: 1000px) {
       font-size: calc(1vw + 1vh + 1vmin);
+      display: block;
     }
   }
   .profil {
@@ -158,7 +161,7 @@
   @media only screen and (min-width: 1000px) {
     height: 100%;
     max-width: 350px;
-    width: 20%;
+    min-width: 20%;
   }
   &::before {
     content: '';
@@ -260,9 +263,11 @@
   &__logo {
     height: 50px;
     width: 50px;
+    margin-bottom: 1rem;
     @media only screen and (min-width: 1000px) {
       height: 80px;
       width: 80px;
+      margin-bottom: 0;
     }
   }
 }

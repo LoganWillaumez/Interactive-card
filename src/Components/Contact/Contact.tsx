@@ -19,7 +19,7 @@ export const Contact = () => {
   };
   return (
     <section className='contact'>
-      <h4 className='contact__title'>Contact me!</h4>
+      <h3 className='contact__title'>Contact me!</h3>
       <form
         className='contact__form'
         action=''
