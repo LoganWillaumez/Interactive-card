@@ -1,7 +1,11 @@
 export interface randomUser {
   name: { title: string; first: string; last: string };
   dob: { age: number };
-  location: { country: string; city: string };
+  location: {
+    country: string;
+    city: string;
+    coordinates: { latitude: string; longitude: string };
+  };
   login: { username: string; uuid: string };
   phone: number;
   email: string;

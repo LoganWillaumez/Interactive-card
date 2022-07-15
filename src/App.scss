@@ -5,6 +5,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  height: 100%;
   @media only screen and (min-width: 1000px) {
     flex-direction: row;
     height: 100%;
