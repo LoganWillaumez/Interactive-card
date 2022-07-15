@@ -29,6 +29,7 @@ function App() {
       setLoading(false);
     });
   }, []);
+  console.log(`🚀 ~ dataUser`, dataUser);
   return (
     <div className='App'>
       {loading ? (
@@ -42,7 +43,7 @@ function App() {
         <div className='container'>
           <Header dataUser={dataUser} />
           <Routes>
-            <Route path='/' element={<Map />} />
+            <Route path='/' element={<Map dataUser={dataUser} />} />
             <Route path='/map' element={<Contact />} />
           </Routes>
         </div>
