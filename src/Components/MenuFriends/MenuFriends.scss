@@ -1,0 +1,57 @@
+.menuFriends {
+  position: absolute;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 2rem 1rem 1.5rem;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transform-origin: top right;
+  transform: scale(0);
+  overflow: hidden;
+  transition: transform 250ms ease-in-out;
+  &__title {
+    color: white;
+    z-index: 1;
+    font-weight: 400;
+    font-size: calc(1vw + 1vh + 1vmin);
+  }
+  &__picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+  }
+  &__name {
+    font-size: calc(1vw + 1vh + 0vmin);
+  }
+  &__img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.8;
+  }
+  &--open {
+    transform: scale(1);
+  }
+  &__close {
+    all: unset;
+    color: white;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+  }
+}

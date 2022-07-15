@@ -1,0 +1,48 @@
+.burger {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 2rem 1rem 2rem;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transform: scale(0);
+  transform-origin: left top;
+  overflow: hidden;
+  transition: transform 250ms ease-in-out;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: -1;
+  }
+  &__close {
+    all: unset;
+    color: white;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    font-size: calc(1vw + 1vh);
+  }
+  .nav-link {
+    font-size: calc(1vw + 1vh + 4vmin);
+    &--selected {
+      color: #ff9e3c;
+    }
+    @media only screen and (min-width: 800px) {
+      font-size: calc(1vw + 1vh + 2vmin);
+    }
+  }
+  &--open {
+    transform: scale(1);
+  }
+}
