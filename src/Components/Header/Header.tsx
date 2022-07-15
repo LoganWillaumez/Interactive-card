@@ -17,7 +17,11 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
   return (
     <div className='sidebar'>
       <div className='sidebar__scroll'>
-        <div className='profil'>
+        <section className='sidebar__title-container'>
+          <img className='sidebar__logo' src='./logo.png' alt='logo of site' />
+          <h1 className='sidebar__title'>Inter'Map</h1>
+        </section>
+        <section className='profil'>
           <h2 className='profil__firstName'>{`${dataUser[0]?.name.first}, ${dataUser[0]?.dob.age}`}</h2>
           <div className='profil__location'>
             <i className='profil__point fa-solid fa-location-pin' />
@@ -54,7 +58,7 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
             </button>
             <BurgerMenu burgerOpen={burgerOpen} toggleBurger={toggleBurger} />
           </div>
-        </div>
+        </section>
         <div className='friends'>
           <h4 className='friends__title'>Friends :</h4>
           <div className='friends__data'>
@@ -68,7 +72,7 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
                     <img
                       className='friends__img'
                       src={data.picture.large}
-                      alt=''
+                      alt={`picture of ${data?.name.first}`}
                     />
                     <p className='friends__name'>{data.name.first}</p>
                   </div>

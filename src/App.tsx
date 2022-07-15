@@ -3,7 +3,6 @@ import axios, { AxiosResponse } from 'axios';
 import './App.scss';
 import Header from './Components/Header/Header';
 import { fetchRandomUser, randomUser } from '../interfaces/fetchRandomUser';
-import ClipLoader from 'react-spinners/ClipLoader';
 import { Routes, Route } from 'react-router-dom';
 import { Map } from './Components/Map/Map';
 import { Contact } from './Components/Contact/Contact';

@@ -26,6 +26,7 @@ export const Input = ({
       required={required}
       name={name}
       onChange={(e) => handleChange(e)}
+      autoComplete='on'
     />
   );
 };
