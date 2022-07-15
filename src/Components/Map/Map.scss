@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   @media only screen and (min-width: 1000px) {
-    width: 80%;
+    width: 100%;
   }
 }
 .map-container {
@@ -18,7 +18,7 @@
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  gap: 1rem !important;
+  gap: 2.5rem !important;
   @media only screen and (min-width: 800px) {
     display: inline !important;
   }

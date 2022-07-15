@@ -7,16 +7,16 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import { Routes, Route } from 'react-router-dom';
 import { Map } from './Components/Map/Map';
 import { Contact } from './Components/Contact/Contact';
+import { Oval } from 'react-loader-spinner';
 
 const baseURL = 'https://randomuser.me/api/?results=3';
 
 const override: CSSProperties = {
-  position: 'absolute',
+  position: 'fixed',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
 };
-
 function App() {
   const [dataUser, setDataUser] = useState<randomUser[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -31,12 +31,17 @@ function App() {
   return (
     <div className='App'>
       {loading ? (
-        <ClipLoader
-          color='blue'
-          loading={loading}
-          size={150}
-          cssOverride={override}
-        />
+        <div className='App__loader'>
+          <Oval
+            ariaLabel='loading-indicator'
+            height={100}
+            width={100}
+            strokeWidth={5}
+            strokeWidthSecondary={1}
+            color='blue'
+            secondaryColor='white'
+          />
+        </div>
       ) : (
         <div className='container'>
           <Header dataUser={dataUser} />
