@@ -21,6 +21,9 @@
     &__firstName {
       margin: 0;
       font-size: calc(1vw + 1vh + 1vmin);
+      @media only screen and (min-width: 1200px) {
+        font-size: 2.4rem;
+      }
     }
     &__location {
       display: flex;
@@ -33,6 +36,9 @@
       margin: 0;
       @media only screen and (min-width: 1000px) {
         max-width: fit-content;
+      }
+      @media only screen and (min-width: 1200px) {
+        font-size: 1.5rem;
       }
     }
     &__point {
@@ -99,6 +105,7 @@
     }
     @media only screen and (min-width: 1000px) {
       gap: 2rem;
+
       // padding-bottom: 3rem;
       // border-bottom: 2px solid white;
       position: relative;
@@ -143,6 +150,7 @@
   }
   @media only screen and (min-width: 1000px) {
     height: 100%;
+    max-width: 350px;
     width: 20%;
   }
   &::before {
@@ -226,7 +234,13 @@
   &__scroll {
     @media only screen and (min-width: 1000px) {
       overflow-y: scroll;
+      overflow-x: hidden;
+
       height: 90vh;
+      &::-webkit-scrollbar {
+        display: none;
+        scrollbar-width: none;
+      }
     }
   }
 }

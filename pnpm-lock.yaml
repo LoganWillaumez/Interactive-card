@@ -9,6 +9,7 @@ specifiers:
   normalize.css: ^8.0.1
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-loader-spinner: ^5.1.5
   react-router-dom: ^6.3.0
   react-spinners: ^0.13.3
   sass: ^1.53.0
@@ -21,6 +22,7 @@ dependencies:
   normalize.css: 8.0.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-loader-spinner: 5.1.5_biqbaboplfbrettd7655fr4n2y
   react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
   react-spinners: 0.13.3_biqbaboplfbrettd7655fr4n2y
   sass: 1.53.0
@@ -967,6 +969,16 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-loader-spinner/5.1.5_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-kHSBa3pNPNzd3UGOiOsHCC33qx5bZA7IHKau+YSTVn36Jib4eBVx/TNMggudbzW5CTnRCbP5bnYU4ACAX3mA6g==}
+    peerDependencies:
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react-refresh/0.14.0:

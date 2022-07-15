@@ -41,6 +41,7 @@
     transition: opacity 200ms ease-in-out;
     &--see {
       opacity: 1;
+      z-index: 6;
     }
   }
   &__title {
