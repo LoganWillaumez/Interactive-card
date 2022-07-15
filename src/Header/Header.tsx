@@ -3,11 +3,16 @@ import { randomUser } from '../../interfaces/fetchRandomUser';
 import { MenuFriends } from '../MenuFriends/MenuFriends';
 import { useState } from 'react';
 import { Routes, Route, Link, NavLink } from 'react-router-dom';
+import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 
 function Header({ dataUser }: { dataUser: randomUser[] }) {
   const [friendsOpen, setFriendsOpen] = useState<boolean>(false);
   const toggleFriends = () => {
     setFriendsOpen(!friendsOpen);
+  };
+  const [burgerOpen, setBurgerOpen] = useState<boolean>(false);
+  const toggleBurger = () => {
+    setBurgerOpen(!burgerOpen);
   };
   return (
     <div className='sidebar'>
@@ -58,9 +63,16 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
             toggleFriends={toggleFriends}
           />
         </div>
-        <button type='button' className='button--disable profil__burger'>
-          <i className='fa-solid fa-bars'></i>
-        </button>
+        <div className='profil__burger'>
+          <button
+            type='button'
+            className='button--disable button__burger'
+            onClick={() => toggleBurger()}
+          >
+            <i className='fa-solid fa-bars'></i>
+          </button>
+          <BurgerMenu burgerOpen={burgerOpen} toggleBurger={toggleBurger} />
+        </div>
       </div>
       <div className='friends'>
         <h4 className='friends__title'>Friends :</h4>

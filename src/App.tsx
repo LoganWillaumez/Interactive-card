@@ -29,7 +29,6 @@ function App() {
       setLoading(false);
     });
   }, []);
-  console.log(`🚀 ~ dataUser`, dataUser);
   return (
     <div className='App'>
       {loading ? (

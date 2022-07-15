@@ -125,6 +125,7 @@
     &__burger {
       position: absolute;
       top: 20px;
+      width: fit-content;
       left: 20px;
       font-size: calc(1vw + 1vh + 1vmin);
       @media only screen and (min-width: 800px) {
