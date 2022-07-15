@@ -11,10 +11,9 @@
 .map-container {
   width: 100%;
   height: 100%;
-  //   border-radius: 10px;
 }
 
-// Oui, les important c'est vilain, mais à prioris pas le choix pour modifier la map fournie par notre cher google 😅
+// bad practice, I know, but it allow me to change google map style(for menu on the left) 😅
 .gmnoprint {
   display: flex !important;
   flex-direction: column !important;

@@ -1,8 +1,8 @@
 import './Header.scss';
-import { randomUser } from '../../interfaces/fetchRandomUser';
+import { randomUser } from '../../../interfaces/fetchRandomUser';
 import { MenuFriends } from '../MenuFriends/MenuFriends';
 import { useState } from 'react';
-import { Routes, Route, Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 
 function Header({ dataUser }: { dataUser: randomUser[] }) {
@@ -28,26 +28,6 @@ function Header({ dataUser }: { dataUser: randomUser[] }) {
             src={dataUser[0]?.picture.large}
             alt={`picture of ${dataUser[0]?.name.first}`}
           />
-          {/* <div className='profil__social'>
-            <a
-              className='profil__icons profil__icons--email'
-              href={`mailto:${dataUser[0]?.email}`}
-            >
-              <i className='fa-solid fa-envelope' />
-            </a>
-            <a
-              className='profil__icons profil__icons--phone'
-              href={`tel:${dataUser[0]?.phone}`}
-            >
-              <i className='fa-solid fa-phone' />
-            </a>
-            <button
-              type='button'
-              className='button--disable profil__icons profil__friends'
-            >
-              <i className='fa-solid fa-user-group'></i>
-            </button>
-          </div> */}
         </div>
         <div className='profil__friends'>
           <button

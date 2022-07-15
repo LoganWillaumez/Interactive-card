@@ -1,5 +1,5 @@
 import './MenuFriends.scss';
-import { randomUser } from '../../interfaces/fetchRandomUser';
+import { randomUser } from '../../../interfaces/fetchRandomUser';
 export const MenuFriends = ({
   dataUser,
   friendsOpen,
