@@ -1,6 +1,7 @@
 import './Map.scss';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import { randomUser } from '../../../interfaces/fetchRandomUser';
+import { Oval } from 'react-loader-spinner';
 import { useMemo } from 'react';
 export const Map = ({ dataUser }: { dataUser: randomUser[] }) => {
   // connection to the googlemap Api
@@ -27,7 +28,15 @@ export const Map = ({ dataUser }: { dataUser: randomUser[] }) => {
           <Marker position={center} />
         </GoogleMap>
       ) : (
-        <div>no</div>
+        <Oval
+          ariaLabel='loading-indicator'
+          height={100}
+          width={100}
+          strokeWidth={5}
+          strokeWidthSecondary={1}
+          color='blue'
+          secondaryColor='white'
+        />
       )}
     </div>
   );
