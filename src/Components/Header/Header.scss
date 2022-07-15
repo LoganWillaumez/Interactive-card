@@ -223,8 +223,10 @@
       }
     }
   }
-  @media only screen and (min-width: 1000px) {
-    overflow-y: auto;
-    height: 90vh;
+  &__scroll {
+    @media only screen and (min-width: 1000px) {
+      overflow-y: scroll;
+      height: 90vh;
+    }
   }
 }
