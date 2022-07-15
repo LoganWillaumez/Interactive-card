@@ -1,11 +1,9 @@
 import './Map.scss';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
-import {
-  fetchRandomUser,
-  randomUser,
-} from '../../../interfaces/fetchRandomUser';
+import { randomUser } from '../../../interfaces/fetchRandomUser';
 import { useMemo } from 'react';
 export const Map = ({ dataUser }: { dataUser: randomUser[] }) => {
+  // connection to the googlemap Api
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: import.meta.env.VITE_KEY,
   });

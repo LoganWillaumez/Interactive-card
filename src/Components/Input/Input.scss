@@ -3,7 +3,7 @@
   border-bottom: 1px solid black;
   width: 100%;
   cursor: pointer;
-  height: 3rem;
+  height: 2rem;
   &::placeholder {
     transition: all 250ms ease-in-out;
     transform-origin: bottom left;
@@ -17,5 +17,8 @@
   }
   &:focus {
     outline: none;
+  }
+  @media only screen and (min-width: 1000px) {
+    height: 3rem;
   }
 }
