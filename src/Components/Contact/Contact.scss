@@ -49,6 +49,24 @@
   &__title {
     font-size: calc(1vw + 1vh + 2vmin);
   }
+  .textarea {
+    height: 10vh;
+    width: 100%;
+    &:focus {
+      outline: none;
+      &::placeholder {
+        transition: all 250ms ease-in-out;
+        transform-origin: bottom left;
+        opacity: 0.8;
+      }
+      &:focus::placeholder {
+        transform: translateY(-5px);
+        color: #ff9e3c;
+        font-size: 0.8rem;
+        border: 0px;
+      }
+    }
+  }
   @media only screen and (min-width: 1000px) {
     height: 100%;
     margin-top: 0;

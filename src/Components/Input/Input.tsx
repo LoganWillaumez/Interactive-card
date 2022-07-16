@@ -7,6 +7,7 @@ export const Input = ({
   placeholder,
   required,
   handleChange,
+  arialabel
 }: {
   pattern: string;
   name: string;
@@ -15,10 +16,11 @@ export const Input = ({
   placeholder: string;
   required: boolean;
   handleChange: Function;
+  arialabel: string;
 }) => {
   return (
     <input
-      className='input'
+      className="input"
       type={type}
       pattern={pattern}
       value={value}
@@ -26,7 +28,8 @@ export const Input = ({
       required={required}
       name={name}
       onChange={(e) => handleChange(e)}
-      autoComplete='on'
+      autoComplete="on"
+      aria-label={arialabel}
     />
   );
 };

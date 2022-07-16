@@ -1,82 +1,81 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
+import { useControlled } from '../../Hooks/useControlled';
 import { Input } from '../Input/Input';
 import './Contact.scss';
 
 export const Contact = () => {
-  const [value, setValue] = useState({
+  const [value, resetValue, handleChange] = useControlled({
     name: '',
     email: '',
     subject: '',
-    message: '',
+    message: ''
   });
+  /**
+   * Allow to show the validation modal. After 3 seconds, the modal disapears
+   */
   const [modale, setModale] = useState<boolean>(false);
-  const handleChange = (e: any) => {
-    setValue({ ...value, [e.target.name]: e.target.value });
-  };
   const seeModale = () => {
     setModale(true);
     setTimeout(() => setModale(false), 3000);
   };
   return (
-    <section className='contact'>
-      <h3 className='contact__title'>Contact me!</h3>
+    <section className="contact">
+      <h3 className="contact__title">Contact me!</h3>
       <form
-        className='contact__form'
-        action=''
+        className="contact__form"
+        action=""
         onSubmit={(e) => {
           e.preventDefault();
-          setValue({
-            name: '',
-            email: '',
-            subject: '',
-            message: '',
-          });
+          resetValue();
           seeModale();
         }}
       >
         <Input
-          placeholder='Your name*'
-          name='name'
+          placeholder="Your name*"
+          name="name"
           required={true}
           value={value.name}
           type={'text'}
           pattern={'[a-zA-Z]{3,30}'}
           handleChange={handleChange}
+          arialabel={'name of the contact page'}
         />
         <Input
-          placeholder='Your email*'
-          type='email'
-          name='email'
+          placeholder="Your email*"
+          type="email"
+          name="email"
           value={value.email}
           handleChange={handleChange}
           required={true}
-          pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          arialabel={'email of the contact page'}
         />
         <Input
-          placeholder='Your subject*'
+          placeholder="Your subject*"
           type={'text'}
           value={value.subject}
           handleChange={handleChange}
-          name='subject'
+          name="subject"
           required={true}
           pattern={'[a-zA-Z]{3,30}'}
+          arialabel={'subject of the contact page'}
         />
-        <Input
-          placeholder='Your message*'
-          name='message'
+        <textarea
+          className="textarea"
+          name="message"
+          placeholder="Your message*"
           value={value.message}
-          type={'textarea'}
-          handleChange={handleChange}
-          required={true}
-          pattern={'[a-zA-Z]{3,150}'}
+          cols={30}
+          rows={10}
+          required
+          aria-label="message of the contact page"
+          onChange={() => handleChange}
         />
-        <button type='submit' className='button-contact button--disable'>
+        <button type="submit" className="button-contact button--disable">
           Send
         </button>
       </form>
-      <div className={`modale ${modale ? 'modale--see' : ''}`}>
-        Message send !
-      </div>
+      <p className={`modale ${modale ? 'modale--see' : ''}`}>Message send !</p>
     </section>
   );
 };
