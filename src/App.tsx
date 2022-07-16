@@ -1,4 +1,4 @@
-import { useEffect, useState, CSSProperties } from 'react';
+import { useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import './App.scss';
 import Header from './Components/Header/Header';
@@ -10,12 +10,6 @@ import { Oval } from 'react-loader-spinner';
 
 const baseURL = 'https://randomuser.me/api/?results=3';
 
-const override: CSSProperties = {
-  position: 'fixed',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-};
 function App() {
   const [dataUser, setDataUser] = useState<randomUser[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -28,25 +22,25 @@ function App() {
     });
   }, []);
   return (
-    <div className='App'>
+    <div className="App">
       {loading ? (
-        <div className='App__loader'>
+        <div className="App__loader">
           <Oval
-            ariaLabel='loading-indicator'
+            ariaLabel="loading-indicator"
             height={100}
             width={100}
             strokeWidth={5}
             strokeWidthSecondary={1}
-            color='blue'
-            secondaryColor='white'
+            color="blue"
+            secondaryColor="white"
           />
         </div>
       ) : (
-        <div className='container'>
+        <div className="container">
           <Header dataUser={dataUser} />
           <Routes>
-            <Route path='/' element={<Map dataUser={dataUser} />} />
-            <Route path='/map' element={<Contact />} />
+            <Route path="/" element={<Map dataUser={dataUser} />} />
+            <Route path="/map" element={<Contact />} />
           </Routes>
         </div>
       )}

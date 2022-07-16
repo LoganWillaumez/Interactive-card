@@ -18,11 +18,7 @@
     width: 80%;
   }
   .button-contact {
-    background-image: linear-gradient(
-      109.6deg,
-      rgba(45, 116, 213, 1) 11.2%,
-      rgba(121, 137, 212, 1) 91.2%
-    );
+    background-image: linear-gradient(109.6deg, rgba(45, 116, 213, 1) 11.2%, rgba(121, 137, 212, 1) 91.2%);
     padding: 1rem 2rem;
     border-radius: 20px;
     color: white;
@@ -48,6 +44,24 @@
   }
   &__title {
     font-size: calc(1vw + 1vh + 2vmin);
+  }
+  .textarea {
+    height: 10vh;
+    width: 100%;
+    &:focus {
+      outline: none;
+      &::placeholder {
+        transition: all 250ms ease-in-out;
+        transform-origin: bottom left;
+        opacity: 0.8;
+      }
+      &:focus::placeholder {
+        transform: translateY(-5px);
+        color: #ff9e3c;
+        font-size: 0.8rem;
+        border: 0px;
+      }
+    }
   }
   @media only screen and (min-width: 1000px) {
     height: 100%;
